@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  position: relative;
+  background-color: rgb(37, 41, 52);
+  height: 100vh;
+}
+
+.slogan {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 40%;
+}
+
+#turi {
+  background-color: black;
+  height: 100vh;
+}
