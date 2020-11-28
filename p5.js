@@ -3,7 +3,7 @@ let sketch = function (p) {
 
   p.setup = function () {
     p.createCanvas(window.innerWidth - 18, window.innerHeight);
-    const particlesLength = Math.floor(window.innerWidth / 12);
+    const particlesLength = Math.floor(window.innerWidth / 10);
 
     for (let i = 0; i < particlesLength; i++) {
       particles.push(new Particle());
@@ -26,7 +26,7 @@ let sketch = function (p) {
       // Size
       this.size = 5;
       // Velocity
-      this.vel = p.createVector(p.random(-2, 2), p.random(-1, 1));
+      this.vel = p.createVector(p.random(-2, 2), p.random(-2, 2));
     }
 
     update() {
@@ -57,7 +57,7 @@ let sketch = function (p) {
           particle.pos.x,
           particle.pos.y
         );
-        if (distance < 120) {
+        if (distance < 100) {
           p.stroke("rgba(255,255,255,0.1)");
           p.line(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
         }
