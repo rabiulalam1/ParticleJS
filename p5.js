@@ -2,14 +2,13 @@ let sketch = function (p) {
   const particles = [];
 
   p.setup = function () {
-    p.createCanvas(window.innerWidth - 18, window.innerHeight);
+    p.createCanvas(window.innerWidth, window.innerHeight);
     const particlesLength = Math.floor(window.innerWidth / 10);
 
     for (let i = 0; i < particlesLength; i++) {
       particles.push(new Particle());
     }
   };
-
   p.draw = function () {
     p.background(37, 41, 52);
     particles.map((particle, index) => {
@@ -26,7 +25,7 @@ let sketch = function (p) {
       // Size
       this.size = 5;
       // Velocity
-      this.vel = p.createVector(p.random(-2, 2), p.random(-2, 2));
+      this.vel = p.createVector(p.random(-3, 3), p.random(-2, 2));
     }
 
     update() {
@@ -34,9 +33,21 @@ let sketch = function (p) {
       this.edges();
     }
 
+    // draw() {
+    //   p.noStroke();
+    //   
+    //   p.circle(this.pos.x, this.pos.y, this.size);
+    // }
+    
+
     draw() {
+      const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+      const r = randomBetween(0, 255);
+      const g = randomBetween(0, 255);
+      const b = randomBetween(0, 255);
       p.noStroke();
-      p.fill("#" + (((1 << 24) * Math.random()) | 0).toString(16));
+      // p.fill("#" + (((1 << 24) * Math.random()) | 0).toString(16));
+      p.fill(`rgba(${r},${g},${b},.8)`);
       p.circle(this.pos.x, this.pos.y, this.size);
     }
 
@@ -50,6 +61,8 @@ let sketch = function (p) {
     }
 
     checkParticles(particles) {
+      
+      
       particles.map((particle) => {
         const distance = p.dist(
           this.pos.x,
@@ -59,7 +72,7 @@ let sketch = function (p) {
         );
         if (distance < 100) {
           p.stroke("rgba(255,255,255,0.1)");
-          p.line(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
+          p.line(this.pos.x, -100, particle.pos.x, particle.pos.y);
         }
       });
     }

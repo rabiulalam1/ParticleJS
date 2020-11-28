@@ -6,6 +6,7 @@
 }
 
 #container {
+  overflow: hidden;
   position: relative;
   background-color: rgb(37, 41, 52);
   height: 100vh;
@@ -23,10 +24,12 @@
 
 .heading-primary {
   color: #fff;
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
   display: block;
+  animation: moveInleft 1.4s ease-in-out;
 }
 
 .heading-primary-main-hightlight {
@@ -35,9 +38,42 @@
 
 .heading-primary-sub {
   display: block;
+  animation: moveInRight 1.4s ease-in-out;
 }
 
 #turi {
   background-color: grey;
   height: 100vh;
+}
+
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    transform:translateX(-100px)
+  }
+
+  75% {
+    transform: translateX(12px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0)
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform:translateX(100px)
+  }
+
+  75% {
+    transform: translateX(-12px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0)
+  }
 }
