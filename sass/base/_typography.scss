@@ -1,0 +1,19 @@
+.heading-primary {
+  color: $color-primary-white;
+  backface-visibility: hidden;
+  margin-bottom: 4rem;
+
+  &--main {
+    display: block;
+    animation: moveInleft 1.4s ease-in-out;
+  }
+
+  &--main-hightlight {
+    color: $color-primary-blue;
+  }
+
+  &--sub {
+    display: block;
+    animation: moveInRight 1.4s ease-in-out;
+  }
+}

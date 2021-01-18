@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-rabiulalam",
+  "version": "1.0.0",
+  "description": "Rabiul Alam's Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabiulalam1/ParticleJS.git"
+  },
+  "author": "Rabiul Alam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rabiulalam1/ParticleJS/issues"
+  },
+  "homepage": "https://github.com/rabiulalam1/ParticleJS#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

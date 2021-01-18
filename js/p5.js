@@ -35,13 +35,13 @@ let sketch = function (p) {
 
     // draw() {
     //   p.noStroke();
-    //   
+    //
     //   p.circle(this.pos.x, this.pos.y, this.size);
     // }
-    
 
     draw() {
-      const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+      const randomBetween = (min, max) =>
+        min + Math.floor(Math.random() * (max - min + 1));
       const r = randomBetween(0, 255);
       const g = randomBetween(0, 255);
       const b = randomBetween(0, 255);
@@ -61,8 +61,6 @@ let sketch = function (p) {
     }
 
     checkParticles(particles) {
-      
-      
       particles.map((particle) => {
         const distance = p.dist(
           this.pos.x,
@@ -71,11 +69,11 @@ let sketch = function (p) {
           particle.pos.y
         );
         if (distance < 100) {
-          p.stroke("rgba(255,255,255,0.1)");
+          p.stroke('rgba(255,255,255,0.1)');
           p.line(this.pos.x, -100, particle.pos.x, particle.pos.y);
         }
       });
     }
   }
 };
-new p5(sketch, "container");
+new p5(sketch, 'header');
